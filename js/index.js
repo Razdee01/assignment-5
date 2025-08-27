@@ -10,4 +10,14 @@ for(let emptyHeart of emptyHearts) {
     heart.innerText = currentHeart;
   });
 }
+// call buttons
+const callBtns = document.getElementsByClassName("call-btns");
+for(let callBtn of callBtns) {
+  callBtn.addEventListener("click", function() {
+    const subHeadBtn=callBtn.parentNode.parentNode.children[1].children[1].innerText
+    const phoneBtn=callBtn.parentNode.parentNode.children[2].children[0].innerText
+    alert("📞 Calling " + subHeadBtn + " " + phoneBtn + "...");
 
+
+  });
+}
