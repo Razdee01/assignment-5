@@ -59,3 +59,34 @@ for (let callBtn of callBtns) {
     });
   });
 }
+
+// copy button
+let copyBtn1 = getElement("copy-btn1"); 
+const copyBtns = document.getElementsByClassName("copy-btns");
+
+for (let copyBtn of copyBtns) {
+  copyBtn.addEventListener("click", function () {
+    const card = copyBtn.closest(".card");
+    
+    const numberElement = card.querySelector("div > h2.font-bold.text-2xl");
+
+    if (numberElement) {
+      const numberText = numberElement.innerText;
+
+      navigator.clipboard.writeText(numberText)
+        .then(() => {
+          alert(`Number is copied: ${numberText} copied !`);
+        })
+        .catch(err => console.error("Failed to copy:", err));
+
+      let copyCount = Number(copyBtn1.innerText);
+      copyCount = copyCount + 1;
+      copyBtn1.innerText = copyCount;
+    }
+  });
+}
+
+
+
+
+
