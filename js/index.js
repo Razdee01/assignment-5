@@ -75,7 +75,7 @@ for (let copyBtn of copyBtns) {
 
       navigator.clipboard.writeText(numberText)
         .then(() => {
-          alert(`Number is copied: ${numberText} copied !`);
+          alert(`Number is copied: ${numberText}`);
         })
         .catch(err => console.error("Failed to copy:", err));
 
