@@ -17,7 +17,7 @@ for (let callBtn of callBtns) {
     // coins1
     const coins1 = getElement("coin-id");
     let totalCoin = Number(coins1.innerText);
-    if (totalCoin <= 0) {
+    if (totalCoin <20) {
       alert(
         "You dont have enough coins. To make a call you atleast need 20 coins."
       );
@@ -55,7 +55,7 @@ for (let callBtn of callBtns) {
     coins.innerText = currentcoin;
 
     getElement("clear-btn").addEventListener("click", function () {
-      newDiv.innerHTML = "";
+      historyContainer.innerHTML = "";
     });
   });
 }
